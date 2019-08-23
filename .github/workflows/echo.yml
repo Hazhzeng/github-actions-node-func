@@ -4,9 +4,12 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: HAZENG-DESKTOP
-    
+    runs-on: 
+      name: default
+      tags:
+        os: Windows
+        runner-name: HAZENG-DESKTOP
+        machine-name: HAZENG-DESKTOP
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
