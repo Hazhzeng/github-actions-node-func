@@ -3,9 +3,9 @@ name: CI
 on: [push]
 
 jobs:
+  pool:
+    name: default
   build:
-    pool:
-      name: default
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
