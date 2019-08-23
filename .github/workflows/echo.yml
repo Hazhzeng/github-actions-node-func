@@ -3,8 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  pool:
-    name: default
+  pool: default
   build:
     steps:
     - uses: actions/checkout@v1
