@@ -1,11 +1,13 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   build-and-deploy:
-    runs-on:
-      pool: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
     - uses: Azure/actions/login@master
@@ -14,7 +16,7 @@ jobs:
     - run: az functionapp list
     - uses: bbq-beets/functionapp-actions/functionapp@master
       with:
-        app-name: 'hazeng-fa-hk-node'
+        app-name: 'hazeng-fa-hk-node-ded'
         runtime-stack: 'windows'
         function-runtime: 'node'
         package: '.'
