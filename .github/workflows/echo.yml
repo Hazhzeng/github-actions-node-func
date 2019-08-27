@@ -3,14 +3,20 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on:
-      pool: default
+      pool: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - uses: actions/checkout@master
+    - uses: Azure/actions/login@master
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - run: az functionapp list
+    - uses: bbq-beets/functionapp-actions/functionapp@master
+      with:
+        app-name: 'hazeng-fa-hk-node'
+        runtime-stack: 'windows'
+        function-runtime: 'node'
+        package: '.'
+        id: 'result'
+    - run: echo "The result is ${{ steps.result.outputs.functionapp-url }}"
