@@ -14,5 +14,5 @@ jobs:
       id: result
       with:
         app-name: hazeng-fa-github-win-con-node
-        publish-profile: ${{ secrets.WIN_DED_NODE_SCM_CREDENTIALS }}
+        publish-profile: ${{ secrets.WIN_CON_NODE_SCM_CREDENTIALS }}
     - run: echo "The result is ${{ steps.result.outputs.app-url }}"
