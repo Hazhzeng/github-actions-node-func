@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: Azure/functions-action@dev
       with:
-        id: 'result'
-        app-name: 'hazeng-fa-github-win-con-node'
+        id: result
+        app-name: hazeng-fa-github-win-con-node
         publish-profile: ${{ secrets.SCM_CREDENTIALS }}
-    - run: echo "The result is ${{ steps.result.outputs.functionapp-url }}"
+    - run: echo "The result is ${{ steps.result.outputs.app-url }}"
