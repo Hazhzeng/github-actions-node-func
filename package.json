@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Hazhzeng/github-actions-node-func/issues"
   },
-  "homepage": "https://github.com/Hazhzeng/github-actions-node-func#readme"
+  "homepage": "https://github.com/Hazhzeng/github-actions-node-func#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }
