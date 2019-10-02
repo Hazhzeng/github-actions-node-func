@@ -10,14 +10,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@master
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: 'run npm'
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
     - uses: Azure/functions-action@dev
       id: result
       with:
