@@ -1,4 +1,4 @@
-name: WIN_DED_NODE_SCM_CREDENTIALS
+name: LIN_DED_NODE_SCM_CREDENTIALS
 
 on:
   push:
@@ -13,6 +13,6 @@ jobs:
     - uses: Azure/functions-action@dev
       with:
         id: result
-        app-name: hazeng-fa-github-win-ded-node
-        publish-profile: ${{ secrets.WIN_DED_NODE_SCM_CREDENTIALS }}
+        app-name: hazeng-fa-github-lin-con-node
+        publish-profile: ${{ secrets.LIN_DED_NODE_SCM_CREDENTIALS }}
     - run: echo "The result is ${{ steps.result.outputs.app-url }}"
