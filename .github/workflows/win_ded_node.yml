@@ -11,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: Azure/functions-action@dev
+      id: result
       with:
-        id: result
         app-name: hazeng-fa-github-win-ded-node
         publish-profile: ${{ secrets.WIN_DED_NODE_SCM_CREDENTIALS }}
     - run: echo "The result is ${{ steps.result.outputs.app-url }}"
