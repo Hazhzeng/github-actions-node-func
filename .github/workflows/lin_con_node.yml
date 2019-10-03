@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: Azure/functions-action@dev
+    - uses: Azure/functions-action@v1
       id: result
       with:
         app-name: hazeng-fa-github-lin-con-node
