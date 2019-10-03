@@ -11,11 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: Azure/functions-action@v1
-      id: result
+      id: fa
       with:
         app-name: hazeng-fa-github-win-ded-node-scm
         publish-profile: ${{ secrets.WIN_DED_NODE_SCM_CREDENTIALS }}
-    - run: echo "The result is ${{ steps.result.outputs.app-url }}"
+    - run: echo "The result is ${{ steps.fa.outputs.app-url }}"
     - name: 'Report HttpTrigger Result'
       shell: bash
       run: |
@@ -23,7 +23,7 @@ jobs:
         while [ $i -lt 10 ]; do
           sleep 5
           RESPONSE=$(curl "${{ steps.fa.outputs.app-url }}/api/HttpTrigger")
-          if [ $RESPONSE == UIPUGAMRUPOUBI83910 ]; then
+          if [ $RESPONSE == APPLEVJ ]; then
             exit 0
           fi
           i=$[$i+1]
