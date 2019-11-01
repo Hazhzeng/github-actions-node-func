@@ -1,21 +1,21 @@
 {
-  "name": "github-actions-node-func",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "",
+  "version": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "build": "tsc",
+    "build:production": "npm run prestart && npm prune --production",
+    "watch": "tsc --w",
+    "prestart": "npm run build && func extensions install",
+    "start:host": "func start",
+    "start": "npm-run-all --parallel start:host watch",
+    "test": "echo \"No tests yet...\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hazhzeng/github-actions-node-func.git"
+  "description": "",
+  "devDependencies": {
+    "@azure/functions": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.3.3"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hazhzeng/github-actions-node-func/issues"
-  },
-  "homepage": "https://github.com/Hazhzeng/github-actions-node-func#readme",
   "dependencies": {
     "lodash": "^4.17.15"
   }

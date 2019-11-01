@@ -23,7 +23,7 @@ jobs:
         while [ $i -lt 10 ]; do
           sleep 5
           RESPONSE=$(curl "${{ steps.fa.outputs.app-url }}/api/HttpTrigger")
-          if [ $RESPONSE == LAJDFJBOQJ ]; then
+          if [ $RESPONSE == IAUEFIQJFKASHDV ]; then
             exit 0
           fi
           i=$[$i+1]
