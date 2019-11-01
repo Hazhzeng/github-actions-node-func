@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@master
-    - uses: Azure/functions-action@v1
+    - uses: Azure/functions-action@stage
       id: fa
       with:
         app-name: hazeng-fa-github-win-ded-node-scm
